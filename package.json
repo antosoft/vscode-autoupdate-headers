@@ -1,0 +1,135 @@
+{
+    "name": "vscode-autoupdate-headers",
+    "displayName": "Auto Update Headers",
+    "description": "Fill/Update version, author, copyright, created and updated fields in file header on save, and show name and version from package.json on status bar.",
+    "icon": "antosoftIcon.png",
+    "version": "1.0.33",
+    "publisher": "antosoft",
+    "license": "Zlib",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/antosoft/vscode-autoupdate-headers.git"
+    },
+    "bugs": {
+        "url": "https://github.com/antosoft/vscode-autoupdate-headers/issues"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "configuration": [
+            {
+                "title": "Auto Update Headers",
+                "type": "object",
+                "properties": {
+                    "antosoft.autoUpdateHeader.filenamePattern": {
+                        "description": "Configure regular expression that matched files will be processed.",
+                        "type": "string",
+                        "default": ".*"
+                    },
+                    "antosoft.autoUpdateHeader.lineLimit": {
+                        "description": "The number of lines from head (if plus) or tail (if minus) of file that will be processed.",
+                        "type": "integer",
+                        "default": 5
+                    },
+                    "antosoft.autoUpdateHeader.valueVersion": {
+                        "description": "Update version field with <version> from package.json or literal text",
+                        "type": "string",
+                        "default": "<version>"
+                    },
+                    "antosoft.autoUpdateHeader.versionStart": {
+                        "description": "Regular expression that following of matched part will be treated as version field.",
+                        "type": "string",
+                        "default": "[vV]ersion *: "
+                    },
+                    "antosoft.autoUpdateHeader.versionEnd": {
+                        "description": "Regular expression that preceding of matched part will be treated as version field.",
+                        "type": "string",
+                        "default": "$"
+                    },
+                    "antosoft.autoUpdateHeader.valueAuthor": {
+                        "description": "Update author field with <author> from package.json or literal text.",
+                        "type": "string",
+                        "default": "<author>"
+                    },
+                    "antosoft.autoUpdateHeader.authorStart": {
+                        "description": "Regular expression that following of matched part will be treated as author field.",
+                        "type": "string",
+                        "default": "[aA]uthor *: "
+                    },
+                    "antosoft.autoUpdateHeader.authorEnd": {
+                        "description": "Regular expression that preceding of matched part will be treated as author field.",
+                        "type": "string",
+                        "default": "$"
+                    },
+                    "antosoft.autoUpdateHeader.valueCopyright": {
+                        "description": "Update copyright field with <copyright> from package.json or literal text.",
+                        "type": "string",
+                        "default": "<copyright>"
+                    },
+                    "antosoft.autoUpdateHeader.copyrightStart": {
+                        "description": "Regular expression that following of matched part will be treated as copyright field.",
+                        "type": "string",
+                        "default": "[cC]opyright *: "
+                    },
+                    "antosoft.autoUpdateHeader.copyrightEnd": {
+                        "description": "Regular expression that preceding of matched part will be treated as copyright field.",
+                        "type": "string",
+                        "default": "$"
+                    },
+                    "antosoft.autoUpdateHeader.birthTimeStart": {
+                        "description": "Configure regular expression that following of matched part will be treated as birth time field.",
+                        "type": "string",
+                        "default": "[cC]reated *: "
+                    },
+                    "antosoft.autoUpdateHeader.birthTimeEnd": {
+                        "description": "Configure regular expression that preceding of matched part will be treated as birth time field.",
+                        "type": "string",
+                        "default": "$"
+                    },
+                    "antosoft.autoUpdateHeader.modifiedTimeStart": {
+                        "description": "Configure regular expression that following of matched part will be treated as modified time field.",
+                        "type": "string",
+                        "default": "[uU]dated *: "
+                    },
+                    "antosoft.autoUpdateHeader.modifiedTimeEnd": {
+                        "description": "Configure regular expression that preceding of matched part will be treated as modified time field.",
+                        "type": "string",
+                        "default": "$"
+                    },
+                    "antosoft.autoUpdateHeader.momentFormat": {
+                        "description": "Datetime format string for created and updated file time.",
+                        "type": "string",
+                        "default": "DD/MM/YYYY HH:mm:ss"
+                    }
+                }
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "test": "npm run compile && node ./out/test/runTest.js",
+        "vsce-package": "vsce package"
+    },
+    "devDependencies": {
+        "@types/mocha": "^8.2.2",
+        "@types/node": "^15.0.1",
+        "@types/vscode": "^1.18.0",
+        "typescript": "^4.2.4",
+        "vsce": "^2.7.0",
+        "vscode-test": "^1.5.2",
+        "vso-node-api": "6.5.0"
+    },
+    "dependencies": {
+        "dayjs": "^1.11.0"
+    }
+}

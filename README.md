@@ -35,7 +35,9 @@ In addition to the above, there is also the setting of the target file name (Fil
 
 ## Author
 [antosoft](https://github.com/antosoft)
-[Original code of: lpubsppop01](https://github.com/lpubsppop01)
+
+## Original Author
+[Special thanks to: lpubsppop01](https://github.com/lpubsppop01)
 
 ## License
 [zlib License](https://github.com/antosoft/vscode-autoupdate-headers/raw/main/LICENSE.txt)

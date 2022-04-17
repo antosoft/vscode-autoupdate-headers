@@ -5,5 +5,22 @@
     },
     "search.exclude": {
         "out": true // set this to false to include "out" folder in search results
-    }
+    },
+
+    "antosoft.autoUpdateHeader.filenamePattern": ".*",
+    "antosoft.autoUpdateHeader.lineLimit": 8,
+    "antosoft.autoUpdateHeader.valueVersion": "<version>",
+    "antosoft.autoUpdateHeader.versionStart": "[vV]ersion *:",
+    "antosoft.autoUpdateHeader.versionEnd": "$",
+    "antosoft.autoUpdateHeader.valueAuthor": "<author>",
+    "antosoft.autoUpdateHeader.authorStart": "[aA]uthor *:",
+    "antosoft.autoUpdateHeader.authorEnd": "$",
+    "antosoft.autoUpdateHeader.valueCopyright": "<copyright>",
+    "antosoft.autoUpdateHeader.copyrightStart": "[cC]opyright *:",
+    "antosoft.autoUpdateHeader.copyrightEnd": "$",
+    "antosoft.autoUpdateHeader.birthTimeStart": "[cC]reated *:",
+    "antosoft.autoUpdateHeader.birthTimeEnd": "$",
+    "antosoft.autoUpdateHeader.modifiedTimeStart": "[uU]pdated *:",
+    "antosoft.autoUpdateHeader.modifiedTimeEnd": "$",
+    "antosoft.autoUpdateHeader.momentFormat": "DD/MM/YYYY HH:mm:ss",
 }

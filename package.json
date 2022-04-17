@@ -3,7 +3,9 @@
     "displayName": "Auto Update Headers",
     "description": "Fill/Update version, author, copyright, created and updated fields in file header on save, and show name and version from package.json on status bar.",
     "icon": "antosoft-brands_110x95.png",
-    "version": "1.0.33",
+    "version": "1.1.20",
+    "author": "Antonio da Silva <adsmicrosistemas@gmail.com>",
+    "copyright": "AdS Microsistemas",
     "publisher": "antosoft-aplication",
     "license": "Zlib",
     "engines": {
@@ -118,7 +120,7 @@
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "test": "npm run compile && node ./out/test/runTest.js",
-        "vsce-package": "vsce package"
+        "vsce-package": "npm --no-git-tag-version version patch && vsce package"
     },
     "devDependencies": {
         "@types/mocha": "^8.2.2",
